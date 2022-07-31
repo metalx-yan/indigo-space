@@ -19,12 +19,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:administrator'
         return view('admin.index');
     });
 
-    Route::resource('barang', 'BarangController');
-    Route::resource('bahan', 'BahanController');
-    Route::resource('returpenjualan', 'ReturPenjualanController');
-    Route::post('/prosesret', 'ProsesReturController@proses')->name('prosesret');
-    Route::get('/spb', 'ReturPenjualanController@spb')->name('spb');
-    Route::resource('spbproduksi', 'SpbProduksiController');
+    Route::resource('events', 'EventController');
 });
 
 Route::group(['prefix' => 'ppic', 'middleware' => ['auth', 'role:ppic']], function() {
